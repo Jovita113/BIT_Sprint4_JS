@@ -25,3 +25,37 @@ function Create(){
         }
     }
 }
+
+function Read(){
+    usertr.innerHTML='';
+    names2= JSON.parse(localStorage.getItem("names"));
+    if (names2==null) {
+        usertr.innerHTML+=`
+        <tr>
+            <th class="space">#</th>
+            <th class="space">Product name</th>
+            <th class="space"></th>
+        </tr>
+        `
+    } else {
+        usertr.innerHTML+=`
+        <tr>
+            <th class="space">#</th>
+            <th class="space">Product name</th>
+            <th class="space"></th>
+        </tr>
+        `
+        for(var i=0; i<names2.length; i++){
+            usertr.innerHTML+=`
+            <tr>
+                <td class="space">${i+1}</td>
+                <td class="space">${names2[i]}</td>
+                <td class="space">
+                    <button class="delete-btn" Onclick="Delete(${i})">x</button>
+                    <button class="edit-btn" Onclick="Update(${i})"><i class="fa-solid fa-pen"></i></button>
+                </td>
+            </tr>
+            `
+        }
+    }
+}
