@@ -59,3 +59,15 @@ function Read(){
         }
     }
 }
+
+function Delete(i2) {
+    let names3 = JSON.parse(localStorage.getItem("names"));
+    names3.splice(i2,1);
+    localStorage.setItem("names", JSON.stringify(names3));
+    Read();
+}
+
+function clearTask(){
+    localStorage.clear();
+    Read();
+}
