@@ -6,6 +6,7 @@ var usertr=document.getElementById("nameTR");
 document.getElementById("form").addEventListener("submit",(e)=>{
     e.preventDefault();
     Create();
+    Read();
     document.getElementById("form").reset();
 });
 
